@@ -58,7 +58,9 @@ class _Forget3ScreenState extends State<Forget3Screen> {
               const SizedBox(height: 70),
               LoginButton(
                 btnType: LoginButtonType.reset,
-                onPressCallback: () {},
+                onPressCallback: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
               ),
               const SizedBox(height: 120),
             ],

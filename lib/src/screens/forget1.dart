@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:alnabali/src/widgets/login_textfield.dart';
 import 'package:alnabali/src/widgets/login_button.dart';
 
-class ForgetScreen extends StatefulWidget {
-  const ForgetScreen({Key? key}) : super(key: key);
+class Forget1Screen extends StatefulWidget {
+  const Forget1Screen({Key? key}) : super(key: key);
 
   @override
-  State<ForgetScreen> createState() => _ForgetScreenState();
+  State<Forget1Screen> createState() => _Forget1ScreenState();
 }
 
-class _ForgetScreenState extends State<ForgetScreen> {
+class _Forget1ScreenState extends State<Forget1Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +68,9 @@ class _ForgetScreenState extends State<ForgetScreen> {
                 const SizedBox(height: 120),
                 LoginButton(
                   btnType: LoginButtonType.send,
-                  onPressCallback: () {},
+                  onPressCallback: () {
+                    Navigator.pushReplacementNamed(context, '/forget2');
+                  },
                 ),
                 const SizedBox(height: 150),
               ],
@@ -80,7 +82,7 @@ class _ForgetScreenState extends State<ForgetScreen> {
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: IconButton(
           onPressed: () {
-            // Add your onPressed code here!
+            Navigator.pushReplacementNamed(context, '/');
           },
           iconSize: 36,
           icon: Image.asset('assets/images/btn_back.png'),

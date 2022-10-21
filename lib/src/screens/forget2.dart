@@ -104,7 +104,9 @@ class _Forget2ScreenState extends State<Forget2Screen> {
                 const SizedBox(height: 120),
                 LoginButton(
                   btnType: LoginButtonType.verify,
-                  onPressCallback: () {},
+                  onPressCallback: () {
+                    Navigator.pushReplacementNamed(context, '/forget3');
+                  },
                 ),
                 const SizedBox(height: 30),
                 const Text(
@@ -149,7 +151,7 @@ class _Forget2ScreenState extends State<Forget2Screen> {
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: IconButton(
           onPressed: () {
-            // Add your onPressed code here!
+            Navigator.pushReplacementNamed(context, '/forget1');
           },
           iconSize: 36,
           icon: Image.asset('assets/images/btn_back.png'),

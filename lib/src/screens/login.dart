@@ -44,11 +44,15 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 100),
               LoginButton(
                 btnType: LoginButtonType.logIn,
-                onPressCallback: () {},
+                onPressCallback: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
               ),
               const SizedBox(height: 120),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/forget1');
+                },
                 child: const Text(
                   "FORGET PASSWORD",
                   style: TextStyle(

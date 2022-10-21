@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 
 import 'package:alnabali/src/screens/login.dart';
-import 'package:alnabali/src/screens/forget.dart';
+import 'package:alnabali/src/screens/forget1.dart';
 import 'package:alnabali/src/screens/forget2.dart';
 import 'package:alnabali/src/screens/forget3.dart';
+import 'package:alnabali/src/screens/home.dart';
 
 class AlnabaliApp extends StatelessWidget {
   const AlnabaliApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        //body: LoginScreen(),
-        //body: ForgetScreen(),
-        body: Forget2Screen(),
-        //body: Forget3Screen(),
-      ),
+    return MaterialApp(
+      title: 'Welcome to AL NABALI Driver',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginScreen(),
+        '/forget1': (context) => const Forget1Screen(),
+        '/forget2': (context) => const Forget2Screen(),
+        '/forget3': (context) => const Forget3Screen(),
+        '/home': (context) => const HomeScreen(),
+      },
     );
   }
 }
