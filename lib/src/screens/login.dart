@@ -1,3 +1,4 @@
+import 'package:alnabali/src/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'package:alnabali/src/widgets/login_textfield.dart';
@@ -13,42 +14,53 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          width: SizeConfig.screenWidth,
+          height: SizeConfig.screenHeight,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/bg_normal.jpg'),
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image.asset("assets/images/login_icon.png"),
+              Flexible(
+                  flex: 1, child: SizedBox(height: 160 * SizeConfig.scaleY)),
+              SizedBox(
+                height: 497 * SizeConfig.scaleY,
+                child: Image.asset("assets/images/login_icon.png"),
+              ),
               const Text(
                 "LOGIN",
                 style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w700,
-                  fontSize: 27,
+                  fontSize: 28,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 90),
+              Flexible(
+                  flex: 1, child: SizedBox(height: 250 * SizeConfig.scaleY)),
               const LoginTextField(txtFieldType: LoginTextFieldType.username),
-              const SizedBox(height: 50),
+              Flexible(
+                  flex: 1, child: SizedBox(height: 125 * SizeConfig.scaleY)),
               const LoginTextField(txtFieldType: LoginTextFieldType.password),
-              const SizedBox(height: 100),
+              Flexible(
+                  flex: 1, child: SizedBox(height: 260 * SizeConfig.scaleY)),
               LoginButton(
                 btnType: LoginButtonType.logIn,
-                onPressCallback: () {
+                onPressed: () {
                   Navigator.pushReplacementNamed(context, '/home');
                 },
               ),
-              const SizedBox(height: 120),
+              Flexible(
+                  flex: 1, child: SizedBox(height: 310 * SizeConfig.scaleY)),
               TextButton(
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/forget1');
@@ -69,7 +81,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 46),
             ],
           ),
         ),

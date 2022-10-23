@@ -88,7 +88,7 @@ class OTPTextField extends StatefulWidget {
         super(key: key);
 
   @override
-  _OTPTextFieldState createState() => _OTPTextFieldState();
+  State<OTPTextField> createState() => _OTPTextFieldState();
 }
 
 class _OTPTextFieldState extends State<OTPTextField> {
@@ -309,8 +309,8 @@ class _OTPTextFieldState extends State<OTPTextField> {
 class OtpFieldController {
   late _OTPTextFieldState _otpTextFieldState;
 
-  void setOtpTextFieldState(_OTPTextFieldState state) {
-    _otpTextFieldState = state;
+  void setOtpTextFieldState(State<OTPTextField> state) {
+    _otpTextFieldState = state as _OTPTextFieldState;
   }
 
   void clear() {

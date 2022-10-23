@@ -52,9 +52,12 @@ class _LoginTextFieldState extends State<LoginTextField> {
       labelText = 'MOBILE NUMBER';
     }
 
+    final screenW = MediaQuery.of(context).size.width;
+    final fieldW = screenW * 0.69;
+
     return SizedBox(
-      width: 330,
-      height: 54,
+      width: fieldW,
+      height: fieldW * 0.16,
       child: TextField(
         keyboardType: inputType,
         inputFormatters: formatters,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:alnabali/src/widgets/constants.dart';
 import 'package:alnabali/src/widgets/login_textfield.dart';
 import 'package:alnabali/src/widgets/login_button.dart';
 
@@ -13,35 +14,37 @@ class Forget3Screen extends StatefulWidget {
 class _Forget3ScreenState extends State<Forget3Screen> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          width: SizeConfig.screenWidth,
+          height: SizeConfig.screenHeight,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/bg_normal.jpg'),
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                height: 250,
+                height: 609 * SizeConfig.scaleY,
                 child: Image.asset("assets/images/forget_icon3.png"),
               ),
-              const SizedBox(height: 30),
+              Flexible(flex: 1, child: SizedBox(height: 100 * SizeConfig.scaleY)),
               const Text(
                 "FORGET PASSWORD",
                 style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w700,
-                  fontSize: 27,
+                  fontSize: 28,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 40),
+              Flexible(flex: 1, child: SizedBox(height: 110 * SizeConfig.scaleY)),
               const Text(
                 "Enter your new password below",
                 style: TextStyle(
@@ -51,18 +54,20 @@ class _Forget3ScreenState extends State<Forget3Screen> {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 70),
-              const LoginTextField(txtFieldType: LoginTextFieldType.newPassword),
-              const SizedBox(height: 40),
-              const LoginTextField(txtFieldType: LoginTextFieldType.confirmNewPwd),
-              const SizedBox(height: 70),
+              Flexible(flex: 1, child: SizedBox(height: 180 * SizeConfig.scaleY)),
+              const LoginTextField(
+                  txtFieldType: LoginTextFieldType.newPassword),
+              Flexible(flex: 1, child: SizedBox(height: 130 * SizeConfig.scaleY)),
+              const LoginTextField(
+                  txtFieldType: LoginTextFieldType.confirmNewPwd),
+              Flexible(flex: 1, child: SizedBox(height: 185 * SizeConfig.scaleY)),
               LoginButton(
                 btnType: LoginButtonType.reset,
-                onPressCallback: () {
+                onPressed: () {
                   Navigator.pushReplacementNamed(context, '/home');
                 },
               ),
-              const SizedBox(height: 120),
+              Flexible(flex: 1, child: SizedBox(height: 250 * SizeConfig.scaleY)),
             ],
           ),
         ),
