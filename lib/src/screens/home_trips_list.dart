@@ -156,26 +156,32 @@ class _TripsListViewState extends State<TripsListView> {
               ),
               ButtonsTabBar(
                 backgroundColor: kColorPrimaryBlue,
-                unselectedBackgroundColor: Colors.transparent,
                 borderColor: kColorPrimaryBlue,
+                unselectedBackgroundColor: Colors.transparent,
                 unselectedBorderColor: const Color(0xFFB3B3B3),
                 borderWidth: 1,
                 radius: 100,
+                //height: 62 * SizeConfig.scaleX,
+                // contentPadding: const EdgeInsets.symmetric(horizontal: 6),
                 labelStyle: const TextStyle(
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w400,
-                  fontSize: 11,
+                  fontSize: 10,
                   color: Colors.white,
                 ),
                 unselectedLabelStyle: const TextStyle(
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w400,
-                  fontSize: 11,
+                  fontSize: 10,
                   color: Color(0xFFB3B3B3),
                 ),
                 tabs: tabIDArray
                     .map((t) => Tab(
-                          text: _getTabTextFromID(t),
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 132 * SizeConfig.scaleX,
+                            child: Text(_getTabTextFromID(t)),
+                          ),
                         ))
                     .toList(),
               ),

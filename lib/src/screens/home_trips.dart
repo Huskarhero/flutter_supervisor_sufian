@@ -52,10 +52,10 @@ class _HomeTripsPageState extends State<HomeTripsPage>
             ),
             labelColor: Colors.white,
             unselectedLabelColor: Colors.white,
-            labelStyle: const TextStyle(
+            labelStyle: TextStyle(
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w700,
-              fontSize: 16,
+              fontSize: 32 * SizeConfig.scaleY,
             ),
             tabs: const [
               Tab(text: 'TODAY TRIPS'),
