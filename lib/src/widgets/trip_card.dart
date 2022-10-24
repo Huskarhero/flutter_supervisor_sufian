@@ -25,13 +25,18 @@ class _TripCardState extends State<TripCard> {
     final avatarRadius = screenW * 0.0924 * 0.5;
     return Row(
       children: [
-        CircleAvatar(
-          radius: avatarRadius + 1,
-          backgroundColor: Colors.grey,
+        Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: Colors.grey,
+              width: 1.0,
+            ),
+          ),
           child: CircleAvatar(
             radius: avatarRadius,
-            backgroundImage:
-                AssetImage(widget.info.company.getCompanyImgPath()),
+            backgroundColor: Colors.transparent,
+            backgroundImage: AssetImage(widget.info.company.getCompanyImgPath()),
           ),
         ),
         Expanded(
