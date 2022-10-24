@@ -19,8 +19,8 @@ class _Forget1ScreenState extends State<Forget1Screen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          width: SizeConfig.screenWidth,
-          height: SizeConfig.screenHeight,
+          width: SizeConfig.screenW,
+          height: SizeConfig.screenH,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/bg_normal.jpg'),

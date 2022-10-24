@@ -1,6 +1,6 @@
-import 'package:alnabali/src/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
+import 'package:alnabali/src/widgets/constants.dart';
 import 'package:alnabali/src/widgets/login_textfield.dart';
 import 'package:alnabali/src/widgets/login_button.dart';
 
@@ -19,8 +19,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          width: SizeConfig.screenWidth,
-          height: SizeConfig.screenHeight,
+          width: SizeConfig.screenW,
+          height: SizeConfig.screenH,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/bg_normal.jpg'),
@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w400,
-                    fontSize: 14,
+                    fontSize: 13,
                     color: Colors.transparent,
                     decoration: TextDecoration.underline,
                     decorationColor: Colors.white,

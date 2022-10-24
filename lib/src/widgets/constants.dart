@@ -7,18 +7,18 @@ const Color kColorSecondaryGrey = Color(0xFF4E4E4E);
 
 // configuration for device screen.
 class SizeConfig {
-  static double screenWidth = 0;
-  static double screenHeight = 0;
+  static double screenW = 0;
+  static double screenH = 0;
   static double scaleX = 1;
   static double scaleY = 1;
 
   void init(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    screenWidth = screenSize.width;
-    screenHeight = screenSize.height;
+    screenW = screenSize.width;
+    screenH = screenSize.height;
 
     const designSize = Size(1125, 2436);
-    scaleX = screenWidth / designSize.width;
-    scaleY = screenHeight / designSize.height;
+    scaleX = screenW / designSize.width;
+    scaleY = screenH / designSize.height;
   }
 }

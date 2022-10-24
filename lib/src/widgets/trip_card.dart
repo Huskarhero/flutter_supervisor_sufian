@@ -1,9 +1,9 @@
-import 'package:alnabali/src/widgets/gradient_button.dart';
 import 'package:flutter/material.dart';
 
 import 'package:alnabali/src/model/trip_info.dart';
 import 'package:alnabali/src/widgets/constants.dart';
 import 'package:alnabali/src/widgets/trip_busline.dart';
+import 'package:alnabali/src/widgets/gradient_button.dart';
 
 class TripCard extends StatefulWidget {
   final TripInfo info;

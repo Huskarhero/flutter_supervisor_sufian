@@ -13,7 +13,7 @@ class AlnabaliApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to AL NABALI Driver',
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: {
         '/': (context) => const LoginScreen(),
         '/forget1': (context) => const Forget1Screen(),

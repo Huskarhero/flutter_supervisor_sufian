@@ -15,13 +15,13 @@ class _Forget2ScreenState extends State<Forget2Screen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    final otpW = SizeConfig.screenWidth * 0.69;
+    final otpW = SizeConfig.screenW * 0.69;
 
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          width: SizeConfig.screenWidth,
-          height: SizeConfig.screenHeight,
+          width: SizeConfig.screenW,
+          height: SizeConfig.screenH,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/bg_normal.jpg'),

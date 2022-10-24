@@ -41,7 +41,7 @@ class _LoginButtonState extends State<LoginButton> {
     }
 
     SizeConfig().init(context);
-    final btnW = SizeConfig.screenWidth * 0.69;
+    final btnW = SizeConfig.screenW * 0.69;
 
     // return Stack(
     //   alignment: Alignment.center,
