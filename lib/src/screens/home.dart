@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 10),
-                height: 200 * SizeConfig.scaleY,
+                height: 80,
                 child: Image.asset('assets/images/home_icon.png'),
               ),
               Expanded(

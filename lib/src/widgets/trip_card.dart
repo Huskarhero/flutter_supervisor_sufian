@@ -21,22 +21,20 @@ class TripCard extends StatefulWidget {
 
 class _TripCardState extends State<TripCard> {
   Widget _buildCompanyRow() {
-    final screenW = MediaQuery.of(context).size.width;
-    final avatarRadius = screenW * 0.0924 * 0.5;
+    final avatarRadius = 106 * SizeConfig.scaleX * 0.5;
+
     return Row(
       children: [
         Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(
-              color: Colors.grey,
-              width: 1.0,
-            ),
+            border: Border.all(color: Colors.grey, width: 1.0),
           ),
           child: CircleAvatar(
             radius: avatarRadius,
             backgroundColor: Colors.transparent,
-            backgroundImage: AssetImage(widget.info.company.getCompanyImgPath()),
+            backgroundImage:
+                AssetImage(widget.info.company.getCompanyImgPath()),
           ),
         ),
         Expanded(
@@ -100,7 +98,7 @@ class _TripCardState extends State<TripCard> {
             Row(
               children: [
                 SizedBox(
-                  width: screenW * 0.035,
+                  width: 38 * SizeConfig.scaleX,
                   child: Image.asset('assets/images/passengers.png'),
                 ),
                 const SizedBox(width: 4),
@@ -125,9 +123,8 @@ class _TripCardState extends State<TripCard> {
     if (widget.info.status == TripStatus.pending ||
         widget.info.status == TripStatus.accepted ||
         widget.info.status == TripStatus.started) {
-      final screenW = MediaQuery.of(context).size.width;
-      final btnW = screenW * 0.24;
-      final btnH = btnW * 0.25;
+      final btnW = 268 * SizeConfig.scaleX;
+      final btnH = btnW * 0.26;
       final yesTitle =
           widget.info.status == TripStatus.started ? 'FINISH' : 'ACCEPT';
       final noTitle =
@@ -152,7 +149,7 @@ class _TripCardState extends State<TripCard> {
                   style: const TextStyle(
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w700,
-                    fontSize: 9,
+                    fontSize: 10,
                   ),
                 ),
               ),
@@ -173,8 +170,6 @@ class _TripCardState extends State<TripCard> {
   }
 
   Widget _buildCardContents() {
-    final screenW = MediaQuery.of(context).size.width;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
@@ -183,7 +178,7 @@ class _TripCardState extends State<TripCard> {
           alignment: Alignment.center,
           children: [
             SizedBox(
-              width: screenW * 0.364,
+              width: 410 * SizeConfig.scaleX,
               child: Image.asset(widget.info.getStatusImgPath()),
             ),
             Text(
@@ -209,8 +204,8 @@ class _TripCardState extends State<TripCard> {
             ),
           ),
         ),
-        SizedBox(
-          width: screenW * 0.741,
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 32),
           child: Column(
             children: [
               _buildCompanyRow(),
@@ -226,31 +221,10 @@ class _TripCardState extends State<TripCard> {
 
   @override
   Widget build(BuildContext context) {
-    final screenW = MediaQuery.of(context).size.width;
-    final cardW = screenW * 0.82;
-    //final cardH = cardW * 0.675;
+    SizeConfig().init(context);
 
-    // return Stack(
-    //   alignment: Alignment.center,
-    //   children: [
-    //     ElevatedButton(
-    //       onPressed: () {},
-    //       style: ElevatedButton.styleFrom(
-    //         backgroundColor: Colors.white,
-    //         foregroundColor: Colors.grey,
-    //         elevation: 4,
-    //         side: const BorderSide(width: 0.1, color: Colors.grey),
-    //         shape: RoundedRectangleBorder(
-    //           borderRadius: BorderRadius.circular(18), // <-- Radius
-    //         ),
-    //       ),
-    //       child: SizedBox(width: cardW, height: cardH),
-    //     ),
-    //     _buildCardContents(),
-    //   ],
-    // );
     return Container(
-      width: cardW,
+      margin: const EdgeInsets.symmetric(horizontal: 30),
       //height: cardH,
       decoration: BoxDecoration(
         color: Colors.white,

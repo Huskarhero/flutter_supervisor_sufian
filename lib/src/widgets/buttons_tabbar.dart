@@ -305,7 +305,7 @@ class _ButtonsTabBarState extends State<ButtonsTabBar>
         animationValue);
     final Color? borderColor = Color.lerp(
         widget.unselectedBorderColor, widget.borderColor, animationValue);
-    final Color foregroundColor = textStyle?.color ?? Colors.black;
+    //final Color foregroundColor = textStyle?.color ?? Colors.black;
 
     final BoxDecoration? boxDecoration = BoxDecoration.lerp(
         BoxDecoration(
@@ -332,10 +332,11 @@ class _ButtonsTabBarState extends State<ButtonsTabBar>
       //
     }
 
-    return Padding(
+    return Container(
       key: _tabKeys[index],
       // padding for the buttons
       padding: widget.buttonMargin,
+      width: 62, height: 28,
       child: TextButton(
         onPressed: () {
           _controller?.animateTo(index);
@@ -365,27 +366,28 @@ class _ButtonsTabBarState extends State<ButtonsTabBar>
           child: Container(
             padding: widget.contentPadding,
             alignment: Alignment.center,
-            child: Row(
-              children: <Widget>[
-                tab.icon != null
-                    ? IconTheme.merge(
-                        data: IconThemeData(size: 24.0, color: foregroundColor),
-                        child: tab.icon!)
-                    : Container(),
-                SizedBox(
-                  width: tab.icon == null ||
-                          (tab.text == null && tab.child == null)
-                      ? 0
-                      : widget.labelSpacing,
-                ),
-                tab.text != null
-                    ? Text(
-                        tab.text!,
-                        style: textStyle,
-                      )
-                    : (tab.child ?? Container())
-              ],
-            ),
+            // child: Row(
+            //   children: <Widget>[
+            //     tab.icon != null
+            //         ? IconTheme.merge(
+            //             data: IconThemeData(size: 24.0, color: foregroundColor),
+            //             child: tab.icon!)
+            //         : Container(),
+            //     SizedBox(
+            //       width: tab.icon == null ||
+            //               (tab.text == null && tab.child == null)
+            //           ? 0
+            //           : widget.labelSpacing,
+            //     ),
+            //     tab.text != null
+            //         ? Text(
+            //             tab.text!,
+            //             style: textStyle,
+            //           )
+            //         : (tab.child ?? Container())
+            //   ],
+            // ),
+            child: Text(tab.text!, style: textStyle),
           ),
         ),
       ),
@@ -420,6 +422,7 @@ class _ButtonsTabBarState extends State<ButtonsTabBar>
             scrollDirection: Axis.horizontal,
             padding: widget.center ? _centerPadding : EdgeInsets.zero,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.min,
               children: List.generate(
                 widget.tabs.length,

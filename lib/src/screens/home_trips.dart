@@ -34,11 +34,10 @@ class _HomeTripsPageState extends State<HomeTripsPage>
     return Column(
       children: [
         Container(
-          height: 130 * SizeConfig.scaleY,
-          margin: EdgeInsets.only(
-            left: primaryTabBarHMargin,
-            right: primaryTabBarHMargin,
-            top: 50 * SizeConfig.scaleY,
+          height: 50,
+          margin: EdgeInsets.symmetric(
+            horizontal: primaryTabBarHMargin,
+            vertical: 54 * SizeConfig.scaleY,
           ),
           decoration: BoxDecoration(
             color: const Color(0xFFB3B3B3),
@@ -52,10 +51,10 @@ class _HomeTripsPageState extends State<HomeTripsPage>
             ),
             labelColor: Colors.white,
             unselectedLabelColor: Colors.white,
-            labelStyle: TextStyle(
+            labelStyle: const TextStyle(
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w700,
-              fontSize: 32 * SizeConfig.scaleY,
+              fontSize: 16,
             ),
             tabs: const [
               Tab(text: 'TODAY TRIPS'),
@@ -63,15 +62,11 @@ class _HomeTripsPageState extends State<HomeTripsPage>
             ],
           ),
         ),
-        // tab bar view here
         Expanded(
           child: TabBarView(
             controller: _tabController,
             children: const [
-              // TODAY TRIPS view
               TripsListView(listType: TripsListType.todayTrips),
-
-              // PAST TRIPS view
               TripsListView(listType: TripsListType.pastTrips),
             ],
           ),

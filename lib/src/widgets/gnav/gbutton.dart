@@ -106,10 +106,10 @@ class _GButtonState extends State<GButton> {
         text: Text(
           widget.text,
           style: widget.textStyle ??
-              TextStyle(
+              const TextStyle(
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w700,
-                fontSize: 36 * SizeConfig.scaleY,
+                fontSize: 16,
                 color: kColorPrimaryBlue,
               ),
         ),
