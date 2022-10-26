@@ -1,9 +1,7 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 import 'package:alnabali/src/widgets/constants.dart';
-import 'package:alnabali/src/widgets/curve_painter.dart';
+import 'package:alnabali/src/widgets/custom_painter.dart';
 
 class HomeAccountPage extends StatefulWidget {
   const HomeAccountPage({Key? key}) : super(key: key);
@@ -82,7 +80,7 @@ class _HomeAccountPageState extends State<HomeAccountPage> {
       children: [
         Container(
           margin: const EdgeInsets.symmetric(vertical: 10),
-          height: 80,
+          height: 192 * SizeConfig.scaleY,
           child: Image.asset('assets/images/home_icon.png'),
         ),
         Expanded(
@@ -90,27 +88,27 @@ class _HomeAccountPageState extends State<HomeAccountPage> {
             alignment: AlignmentDirectional.topCenter,
             children: [
               Container(
-                margin: const EdgeInsets.only(top: 50),
+                margin: EdgeInsets.only(top: 170 * SizeConfig.scaleY),
                 child: SizedBox.expand(
-                  child: CustomPaint(painter: CurvePainter()),
+                  child: CustomPaint(painter: AccountBgPainter()),
                 ),
               ),
               Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 130 * SizeConfig.scaleY),
+                    margin: EdgeInsets.only(top: 170 * SizeConfig.scaleY),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(color: kColorAvatarBorder, width: 1.0),
                     ),
-                    child: const CircleAvatar(
-                      radius: 74,
+                    child: CircleAvatar(
+                      radius: 165 * SizeConfig.scaleY,
                       backgroundColor: Colors.transparent,
                       backgroundImage:
-                          AssetImage('assets/images/user_avatar.png'),
+                          const AssetImage('assets/images/user_avatar.png'),
                     ),
                   ),
-                  const Flexible(child: SizedBox(height: 10)),
+                  Flexible(child: SizedBox(height: 30 * SizeConfig.scaleY)),
                   const Text(
                     'Sufian Abu Alabban',
                     style: TextStyle(
@@ -120,7 +118,7 @@ class _HomeAccountPageState extends State<HomeAccountPage> {
                       color: kColorPrimaryBlue,
                     ),
                   ),
-                  const Flexible(flex: 2, child: SizedBox(height: 24)),
+                  Flexible(child: SizedBox(height: 70 * SizeConfig.scaleY)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -130,9 +128,13 @@ class _HomeAccountPageState extends State<HomeAccountPage> {
                       _buildSummaryInfo(2, '20'),
                     ],
                   ),
-                  const Flexible(flex: 2, child: SizedBox(height: 90)),
+                  Flexible(
+                      flex: 2,
+                      child: SizedBox(height: 190 * SizeConfig.scaleY)),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/edit_profile');
+                    },
                     style: btnStyle,
                     child: Container(
                       alignment: Alignment.center,
@@ -141,9 +143,11 @@ class _HomeAccountPageState extends State<HomeAccountPage> {
                       child: const Text('Edit Profile', style: btnTextStyle),
                     ),
                   ),
-                  const Flexible(child: SizedBox(height: 10)),
+                  Flexible(child: SizedBox(height: 30 * SizeConfig.scaleY)),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/edit_profile');
+                    },
                     style: btnStyle,
                     child: Container(
                       alignment: Alignment.center,
@@ -152,7 +156,7 @@ class _HomeAccountPageState extends State<HomeAccountPage> {
                       child: const Text('Reset Password', style: btnTextStyle),
                     ),
                   ),
-                  const Flexible(child: SizedBox(height: 10)),
+                  Flexible(child: SizedBox(height: 30 * SizeConfig.scaleY)),
                   TextButton(
                     onPressed: () {},
                     style: btnStyle,
@@ -164,7 +168,7 @@ class _HomeAccountPageState extends State<HomeAccountPage> {
                           style: btnTextStyle),
                     ),
                   ),
-                  const Flexible(flex: 2, child: SizedBox(height: 50)),
+                  Flexible(child: SizedBox(height: 110 * SizeConfig.scaleY)),
                   TextButton(
                     onPressed: () {},
                     style: ButtonStyle(
@@ -202,7 +206,7 @@ class _HomeAccountPageState extends State<HomeAccountPage> {
                       ),
                     ),
                   ),
-                  const Flexible(child: SizedBox(height: 36)),
+                  Flexible(child: SizedBox(height: 80 * SizeConfig.scaleY)),
                   const Text(
                     'App Version 0100.0',
                     style: TextStyle(
@@ -212,7 +216,9 @@ class _HomeAccountPageState extends State<HomeAccountPage> {
                       color: kColorPrimaryBlue,
                     ),
                   ),
-                  const SizedBox(height: 80),
+                  Flexible(
+                      flex: 3,
+                      child: SizedBox(height: 170 * SizeConfig.scaleY)),
                 ],
               ),
             ],

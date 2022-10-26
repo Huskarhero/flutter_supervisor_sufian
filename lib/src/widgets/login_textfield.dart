@@ -68,13 +68,13 @@ class _LoginTextFieldState extends State<LoginTextField> {
             padding: const EdgeInsets.only(left: 10, right: 10),
             child: Text(labelText),
           ),
-          //floatingLabelAlignment: FloatingLabelAlignment.start,
           labelStyle: const TextStyle(
             fontFamily: 'Montserrat',
             fontWeight: FontWeight.w500,
             fontSize: 18,
             color: Colors.white,
           ),
+          //floatingLabelAlignment: FloatingLabelAlignment.start,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding: const EdgeInsets.symmetric(
             vertical: 20,

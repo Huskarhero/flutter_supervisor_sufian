@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CurvePainter extends CustomPainter {
+class AccountBgPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint();
@@ -8,15 +8,8 @@ class CurvePainter extends CustomPainter {
     paint.style = PaintingStyle.fill; // Change this to fill
 
     var path = Path();
-
-    // path.moveTo(0, size.height * 0.25);
-    // path.quadraticBezierTo(
-    //     size.width / 2, size.height / 2, size.width, size.height * 0.25);
-    // path.lineTo(size.width, 0);
-    // path.lineTo(0, 0);
     path.moveTo(0, 0);
-    path.quadraticBezierTo(
-        size.width / 2, size.height * 0.25, size.width, 0);
+    path.quadraticBezierTo(size.width * 0.5, size.height * 0.25, size.width, 0);
     path.lineTo(size.width, size.height);
     path.lineTo(0, size.height);
 

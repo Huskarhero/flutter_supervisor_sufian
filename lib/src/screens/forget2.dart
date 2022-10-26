@@ -103,6 +103,9 @@ class _Forget2ScreenState extends State<Forget2Screen> {
                       onCompleted: (pin) {
                         //print("Completed: " + pin);
                       },
+                      onChanged:(value) {
+                        //print("Completed: " + pin);
+                      },
                     ),
                   ),
                 ],
@@ -162,7 +165,7 @@ class _Forget2ScreenState extends State<Forget2Screen> {
           onPressed: () {
             Navigator.pushReplacementNamed(context, '/forget1');
           },
-          iconSize: 36,
+          iconSize: 89 * SizeConfig.scaleY,
           icon: Image.asset('assets/images/btn_back.png'),
         ),
       ),

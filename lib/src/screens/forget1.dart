@@ -90,7 +90,7 @@ class _Forget1ScreenState extends State<Forget1Screen> {
           onPressed: () {
             Navigator.pushReplacementNamed(context, '/');
           },
-          iconSize: 36,
+          iconSize: 89 * SizeConfig.scaleY,
           icon: Image.asset('assets/images/btn_back.png'),
         ),
       ),
