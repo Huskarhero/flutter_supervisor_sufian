@@ -37,8 +37,8 @@ const List<Color> kTripStatusColors = [
 ///-----------------------------------------------------------------------------
 
 class CompanyInfo {
-  String companyName;
-  String tripName;
+  final String companyName;
+  final String tripName;
 
   CompanyInfo({
     required this.companyName,
@@ -56,16 +56,18 @@ class CompanyInfo {
 ///-----------------------------------------------------------------------------
 
 class BusLineInfo {
-  DateTime fromTime;
-  DateTime toTime;
-  String courseName;
-  String cityName;
+  final DateTime fromTime;
+  final DateTime toTime;
+  final String courseName;
+  final String cityName;
+  final String courseDetail;
 
   BusLineInfo({
     required this.fromTime,
     required this.toTime,
     required this.courseName,
     required this.cityName,
+    required this.courseDetail,
   });
 
   String getFromDateStr() {
@@ -102,12 +104,13 @@ class BusLineInfo {
 ///-----------------------------------------------------------------------------
 
 class TripInfo {
-  TripStatus status;
-  int tripNo;
-  CompanyInfo company;
-  String busNo;
-  int passengers;
-  BusLineInfo busLine;
+  final TripStatus status;
+  final int tripNo;
+  final CompanyInfo company;
+  final String busNo;
+  final int passengers;
+  final BusLineInfo busLine;
+  final String rejectReason;
 
   TripInfo({
     this.status = TripStatus.pending,
@@ -116,6 +119,7 @@ class TripInfo {
     required this.busNo,
     required this.passengers,
     required this.busLine,
+    this.rejectReason = '',
   });
 
   String getStatusImgPath() {

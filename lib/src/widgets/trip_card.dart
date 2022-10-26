@@ -8,11 +8,13 @@ import 'package:alnabali/src/widgets/gradient_button.dart';
 class TripCard extends StatefulWidget {
   final TripInfo info;
   final VoidCallback onPressed;
+  final bool showDetail;
 
   const TripCard({
     Key? key,
     required this.info,
     required this.onPressed,
+    this.showDetail = false,
   }) : super(key: key);
 
   @override
@@ -119,16 +121,82 @@ class _TripCardState extends State<TripCard> {
     );
   }
 
+  Widget _buildRejectResonRow() {
+    if (widget.info.status != TripStatus.rejected ||
+        widget.info.rejectReason.isEmpty) return const SizedBox();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          margin: const EdgeInsets.only(top: 20, bottom: 4),
+          child: const Text(
+            'REASON FOR REJECTION',
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.w600,
+              fontSize: 12,
+              color: kColorPrimaryBlue,
+            ),
+          ),
+        ),
+        Text(
+          widget.info.rejectReason,
+          style: const TextStyle(
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w400,
+            fontSize: 12,
+            color: kColorSecondaryGrey,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildDetailRow() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          margin: const EdgeInsets.only(top: 20, bottom: 4),
+          child: const Text(
+            'DETAILS',
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.w600,
+              fontSize: 12,
+              color: kColorPrimaryBlue,
+            ),
+          ),
+        ),
+        Text(
+          widget.info.busLine.courseDetail,
+          style: const TextStyle(
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w400,
+            fontSize: 12,
+            color: kColorSecondaryGrey,
+          ),
+        ),
+        _buildRejectResonRow(),
+      ],
+    );
+  }
+
   Widget _buildButtonsRow() {
     if (widget.info.status == TripStatus.pending ||
         widget.info.status == TripStatus.accepted ||
         widget.info.status == TripStatus.started) {
       final btnW = 268 * SizeConfig.scaleX;
       final btnH = btnW * 0.26;
-      final yesTitle =
-          widget.info.status == TripStatus.started ? 'FINISH' : 'ACCEPT';
-      final noTitle =
-          widget.info.status == TripStatus.started ? 'NAVIGATION' : 'REJECT';
+      String yesTitle = 'ACCEPT';
+      String noTitle = 'REJECT';
+      if (widget.info.status == TripStatus.started) {
+        yesTitle = 'FINISH';
+        noTitle = 'NAVIGATION';
+      } else if (widget.info.status == TripStatus.accepted) {
+        yesTitle = 'START';
+      }
 
       return SizedBox(
         height: btnH + 34,
@@ -211,6 +279,7 @@ class _TripCardState extends State<TripCard> {
               _buildCompanyRow(),
               const SizedBox(height: 2),
               TripBusLine(info: widget.info.busLine),
+              widget.showDetail ? _buildDetailRow() : const SizedBox(),
               _buildButtonsRow(),
             ],
           ),
@@ -223,23 +292,29 @@ class _TripCardState extends State<TripCard> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
 
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30),
-      //height: cardH,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Colors.grey.withOpacity(0.5)),
-        borderRadius: const BorderRadius.all(Radius.circular(18)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 1,
-            blurRadius: 1,
-            offset: const Offset(0, 2),
-          ),
-        ],
+    return GestureDetector(
+      onTap: () {
+        if (widget.showDetail) return;
+
+        Navigator.pushNamed(context, '/trip_detail');
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 30),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(color: Colors.grey.withOpacity(0.5)),
+          borderRadius: const BorderRadius.all(Radius.circular(18)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              spreadRadius: 1,
+              blurRadius: 1,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: _buildCardContents(),
       ),
-      child: _buildCardContents(),
     );
   }
 }

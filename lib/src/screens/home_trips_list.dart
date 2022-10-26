@@ -100,6 +100,8 @@ class _TripsListViewState extends State<TripsListView> {
                       toTime: DateTime(2022, 10, 10, 16, 30),
                       courseName: 'KHALDA - ALNEYMAT ST.',
                       cityName: 'AMMAN',
+                      courseDetail:
+                          'AMMAN - ALSWEFIAH - ALNEYMAT ST.AMMAN ALSWEFIAH - AKBETNAT ST',
                     ),
                   ),
                   TripInfo(
@@ -116,6 +118,8 @@ class _TripsListViewState extends State<TripsListView> {
                       toTime: DateTime(2022, 10, 10, 16, 30),
                       courseName: 'KHALDA - ALNEYMAT ST.',
                       cityName: 'AMMAN',
+                      courseDetail:
+                          'AMMAN - ALSWEFIAH - ALNEYMAT ST.AMMAN ALSWEFIAH - AKBETNAT ST',
                     ),
                   ),
                   TripInfo(
@@ -132,6 +136,8 @@ class _TripsListViewState extends State<TripsListView> {
                       toTime: DateTime(2022, 10, 10, 16, 30),
                       courseName: 'KHALDA - ALNEYMAT ST.',
                       cityName: 'AMMAN',
+                      courseDetail:
+                          'AMMAN - ALSWEFIAH - ALNEYMAT ST.AMMAN ALSWEFIAH - AKBETNAT ST',
                     ),
                   ),
                   TripInfo(
@@ -148,6 +154,8 @@ class _TripsListViewState extends State<TripsListView> {
                       toTime: DateTime(2022, 10, 10, 16, 30),
                       courseName: 'KHALDA - ALNEYMAT ST.',
                       cityName: 'AMMAN',
+                      courseDetail:
+                          'AMMAN - ALSWEFIAH - ALNEYMAT ST.AMMAN ALSWEFIAH - AKBETNAT ST',
                     ),
                   ),
                   TripInfo(
@@ -164,6 +172,8 @@ class _TripsListViewState extends State<TripsListView> {
                       toTime: DateTime(2022, 10, 10, 16, 30),
                       courseName: 'KHALDA - ALNEYMAT ST.',
                       cityName: 'AMMAN',
+                      courseDetail:
+                          'AMMAN - ALSWEFIAH - ALNEYMAT ST.AMMAN ALSWEFIAH - AKBETNAT ST',
                     ),
                   ),
                   TripInfo(
@@ -180,6 +190,8 @@ class _TripsListViewState extends State<TripsListView> {
                       toTime: DateTime(2022, 10, 10, 16, 30),
                       courseName: 'KHALDA - ALNEYMAT ST.',
                       cityName: 'AMMAN',
+                      courseDetail:
+                          'AMMAN - ALSWEFIAH - ALNEYMAT ST.AMMAN ALSWEFIAH - AKBETNAT ST',
                     ),
                   ),
                 ];

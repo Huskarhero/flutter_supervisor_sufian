@@ -7,6 +7,7 @@ import 'package:alnabali/src/screens/forget3.dart';
 import 'package:alnabali/src/screens/home.dart';
 import 'package:alnabali/src/screens/edit_profile.dart';
 import 'package:alnabali/src/screens/change_password.dart';
+import 'package:alnabali/src/screens/trip_detail.dart';
 
 class AlnabaliApp extends StatelessWidget {
   const AlnabaliApp({super.key});
@@ -25,6 +26,7 @@ class AlnabaliApp extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         '/edit_profile': (context) => const EditProfileScreen(),
         '/change_password': (context) => const ChangePasswordScreen(),
+        '/trip_detail': (context) => const TripDetailScreen(),
       },
     );
   }
