@@ -109,7 +109,7 @@ class _GButtonState extends State<GButton> {
               const TextStyle(
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 17,
                 color: kColorPrimaryBlue,
               ),
         ),

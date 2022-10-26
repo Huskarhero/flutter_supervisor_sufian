@@ -49,7 +49,6 @@ class _TripsListViewState extends State<TripsListView> {
       child: Column(
         children: [
           Row(
-            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -188,7 +187,10 @@ class _TripsListViewState extends State<TripsListView> {
                 return ListView.separated(
                   itemCount: dummyInfos.length,
                   itemBuilder: (BuildContext context, int itemIdx) {
-                    return TripCard(info: dummyInfos[itemIdx], onPressed: () {});
+                    return TripCard(
+                      info: dummyInfos[itemIdx],
+                      onPressed: () {},
+                    );
                   },
                   separatorBuilder: (BuildContext context, int index) =>
                       const SizedBox(height: 30),

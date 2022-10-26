@@ -134,4 +134,27 @@ class TripInfo {
   String getTripNoStr() {
     return 'Trip # $tripNo';
   }
+
+  String getTripNoStrShort() {
+    return '#$tripNo';
+  }
+
+  String getNotificationStr() {
+    switch (status) {
+      case TripStatus.pending:
+        return 'New pending trip';
+      case TripStatus.accepted:
+        return 'Trip has been accepted';
+      case TripStatus.rejected:
+        return 'Trip has been rejected';
+      case TripStatus.started:
+        return 'Trip has been started';
+      case TripStatus.finished:
+        return 'Trip has been finished';
+      case TripStatus.canceled:
+        return 'Trip has been canceled';
+      default:
+        return 'unknown status...';
+    }
+  }
 }

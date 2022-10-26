@@ -5,6 +5,8 @@ import 'package:alnabali/src/widgets/app_icons_icons.dart';
 import 'package:alnabali/src/widgets/gnav/gnav.dart';
 import 'package:alnabali/src/widgets/gnav/gbutton.dart';
 import 'package:alnabali/src/screens/home_trips.dart';
+import 'package:alnabali/src/screens/home_notification.dart';
+import 'package:alnabali/src/screens/home_account.dart';
 
 class HomeScreen extends StatefulWidget {
   static const title = 'bottom_bar';
@@ -39,42 +41,24 @@ class _HomeScreenState extends State<HomeScreen> {
               fit: BoxFit.cover,
             ),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                height: 80,
-                child: Image.asset('assets/images/home_icon.png'),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(36),
-                    ),
-                  ),
-                  child: PageView.builder(
-                    onPageChanged: (page) {
-                      setState(() {
-                        selectedIndex = page;
-                        //badge = badge + 1;
-                      });
-                    },
-                    controller: controller,
-                    itemBuilder: (context, position) {
-                      if (position == 0) {
-                        return const HomeTripsPage();
-                      } else {
-                        return Align(child: Text('page-$position'));
-                      }
-                    },
-                    itemCount: 3,
-                  ),
-                ),
-              ),
-            ],
+          child: PageView.builder(
+            onPageChanged: (page) {
+              setState(() {
+                selectedIndex = page;
+                //badge = badge + 1;
+              });
+            },
+            controller: controller,
+            itemBuilder: (context, position) {
+              if (position == 0) {
+                return const HomeTripsPage();
+              } else if (position == 1) {
+                return const HomeNotificationPage();
+              } else {
+                return const HomeAccountPage();
+              }
+            },
+            itemCount: 3,
           ),
         ),
         bottomNavigationBar: SafeArea(

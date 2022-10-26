@@ -14,7 +14,7 @@ class AlnabaliApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Welcome to AL NABALI Driver',
-      initialRoute: '/home',
+      initialRoute: '/',
       routes: {
         '/': (context) => const LoginScreen(),
         '/forget1': (context) => const Forget1Screen(),

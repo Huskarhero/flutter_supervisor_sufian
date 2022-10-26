@@ -28,7 +28,7 @@ class _TripCardState extends State<TripCard> {
         Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.grey, width: 1.0),
+            border: Border.all(color: kColorAvatarBorder, width: 1.0),
           ),
           child: CircleAvatar(
             radius: avatarRadius,

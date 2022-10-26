@@ -31,6 +31,8 @@ flutter:
         - asset: assets/fonts/Montserrat-Regular.otf
         - asset: assets/fonts/Montserrat-Medium.otf
           weight: 500
+        - asset: assets/fonts/Montserrat-SemiBold.otf
+          weight: 600
         - asset: assets/fonts/Montserrat-Bold.otf
           weight: 700
     - family: AppIcons
